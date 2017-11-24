@@ -15,17 +15,16 @@ def bargain(w,n): #w is the weight vector, n is the number of weights bargaining
             print i
     return b_w
 
-#print bargain(np.random.rand(10),2)
+def plot(w,n):
+    plt.plot(w)
+    for i in range(1,n):
+        print i, n, n%i
+        if n%i==0:
+            plt.plot(bargain(w,i))
+        else:
+            continue
 
-x=np.random.rand(12)
-print x
-print bargain(x,2) #note the number of weights must be divisible by n, have not added exceptions
-plt.plot(x)
-plt.plot(bargain(x,12))
-plt.plot(bargain(x,6))
-plt.plot(bargain(x,4))
-plt.plot(bargain(x,3))
-plt.plot(bargain(x,2))
-plt.show()
+    plt.show()
 
-
+x=np.random.rand(100000)
+plot(x,x.shape[0])
