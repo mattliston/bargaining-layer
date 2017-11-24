@@ -1,6 +1,6 @@
 
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 
 def bargain(w,n): #w is the weight vector, n is the number of weights bargaining over each prize
@@ -15,8 +15,17 @@ def bargain(w,n): #w is the weight vector, n is the number of weights bargaining
             print i
     return b_w
 
-print bargain(np.random.rand(10),2)
-print bargain(np.random.rand(12),3) #note the number of weights must be divisible by n, have not added exceptions
+#print bargain(np.random.rand(10),2)
 
+x=np.random.rand(12)
+print x
+print bargain(x,2) #note the number of weights must be divisible by n, have not added exceptions
+plt.plot(x)
+plt.plot(bargain(x,12))
+plt.plot(bargain(x,6))
+plt.plot(bargain(x,4))
+plt.plot(bargain(x,3))
+plt.plot(bargain(x,2))
+plt.show()
 
 
